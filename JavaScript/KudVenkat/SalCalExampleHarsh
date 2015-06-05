@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Basic Salary Calculator</title>
+</head>
+<body>
+	Basic: <input id="txtBasic"></input><label id="lblBasicError"></label><br><br>
+	HRA:   <input id="txtHra"></input><label id="lblHraError"></label><br><br>
+	DA:    <input id="txtDa"></input><label id="lblDaError"></label><br><br>
+	<button id="btnCalculate" onclick="validateForm()">Calculate</button><br><br>
+	<label id="lblResult">Result</label>
+	<script type="text/javascript">
+		var basicSalaryCalculator = function(basic, hra, da){
+			this.basic = basic;
+			this.hra = hra;
+			this.da = da;
+			this.salary = 0;
+			this.calculateSalary = function calculateSalary() {
+				this.salary = this.basic + this.hra + this.da;
+				return this.salary;
+			}
+		}
+	</script>
+	<script>
+		function validateForm() {
+			basic = document.getElementById("txtBasic").value;
+			hra = document.getElementById("txtHra").value;
+			da = document.getElementById("txtDa").value;
+			if(basic == "" || isNaN(basic) || basic == null)
+			{
+				//alert("Please enter a valid Basic Amount");
+				document.getElementById("lblBasicError").innerHTML = "  Please enter a valid Basic Amount";
+				document.getElementById("lblHraError").innerHTML = "";
+				document.getElementById("lblDaError").innerHTML = "";
+			}
+			else
+			{
+				if(hra == "" || isNaN(hra) || hra == null)
+				{
+					//alert("Please enter a valid HRA Amount");
+					document.getElementById("lblBasicError").innerHTML = "";
+					document.getElementById("lblHraError").innerHTML = "  Please enter a valid HRA Amount";
+					document.getElementById("lblDaError").innerHTML = "";
+				}
+				else
+				{
+					if(da == "" || isNaN(da) || da == null)
+					{
+						//alert("Please enter a valid DA Amount");
+						document.getElementById("lblBasicError").innerHTML = "";
+						document.getElementById("lblHraError").innerHTML = "";
+						document.getElementById("lblDaError").innerHTML = "  Please enter a valid DA Amount";
+					}
+					else
+					{
+						document.getElementById("lblBasicError").innerHTML = "";
+						document.getElementById("lblHraError").innerHTML = "";
+						document.getElementById("lblDaError").innerHTML = "";
+						onClickCalculate();
+					}
+				}
+			}
+		}
+		function onClickCalculate() {
+			var sal = new basicSalaryCalculator(document.getElementById("txtBasic").value,document.getElementById("txtHra").value,document.getElementById("txtDa").value);
+			//alert(sal.calculateSalary());
+			document.getElementById("lblResult").innerHTML = sal.calculateSalary();
+		}
+	</script>
+</body>
+</html>
