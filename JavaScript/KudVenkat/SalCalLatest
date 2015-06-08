@@ -8,7 +8,7 @@
 	<br>
 	<table>
 		<tr>
-			<td>Basic: </td>
+			<td>BASIC: </td>
 			<td><input id="txtBasic"></input><label id="lblBasicError"></label></td>
 		</tr>
 		<tr></tr>
@@ -50,7 +50,7 @@
 			if(basic == "" || isNaN(basic) || basic == null)
 			{
 				//alert("Please enter a valid Basic Amount");
-				document.getElementById("lblBasicError").innerHTML = "  Please enter a valid Basic Amount";
+				document.getElementById("lblBasicError").innerHTML = "  Please enter a valid BASIC Amount";
 				document.getElementById("lblHraError").innerHTML = "";
 				document.getElementById("lblDaError").innerHTML = "";
 				document.getElementById("txtBasic").value = "";
