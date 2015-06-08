@@ -53,30 +53,36 @@
 				document.getElementById("lblBasicError").innerHTML = "  Please enter a valid Basic Amount";
 				document.getElementById("lblHraError").innerHTML = "";
 				document.getElementById("lblDaError").innerHTML = "";
+				document.getElementById("txtBasic").value = "";
+				document.getElementById("txtHra").value = "";
+				document.getElementById("txtDa").value = "";
 			}
 			else
 			{
-				document.getElementById("txtBasic").innerHTML = basic;
+				document.getElementById("txtBasic").value = basic;
 				if(hra == "" || isNaN(hra) || hra == null)
 				{
 					//alert("Please enter a valid HRA Amount");
 					document.getElementById("lblBasicError").innerHTML = "";
 					document.getElementById("lblHraError").innerHTML = "  Please enter a valid HRA Amount";
 					document.getElementById("lblDaError").innerHTML = "";
+					document.getElementById("txtHra").value = "";
+					document.getElementById("txtDa").value = "";
 				}
 				else
 				{
-					document.getElementById("txtHra").innerHTML = hra;
+					document.getElementById("txtHra").value = hra;
 					if(da == "" || isNaN(da) || da == null)
 					{
 						//alert("Please enter a valid DA Amount");
 						document.getElementById("lblBasicError").innerHTML = "";
 						document.getElementById("lblHraError").innerHTML = "";
 						document.getElementById("lblDaError").innerHTML = "  Please enter a valid DA Amount";
+						document.getElementById("txtDa").value = "";
 					}
 					else
 					{
-						document.getElementById("txtDa").innerHTML = da;
+						document.getElementById("txtDa").value = da;
 						document.getElementById("lblBasicError").innerHTML = "";
 						document.getElementById("lblHraError").innerHTML = "";
 						document.getElementById("lblDaError").innerHTML = "";
